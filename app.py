@@ -108,19 +108,19 @@ from langchain.agents import create_agent
 
 load_dotenv()
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+WEATHER_API_KEY = st.secrets["WEATHER_API_KEY"]
 
 # --------------------------------------------------
 # Check API keys
 # --------------------------------------------------
 
 if not GOOGLE_API_KEY:
-    st.error("❌ GOOGLE_API_KEY is missing in your .env file.")
+    st.error("❌ GOOGLE_API_KEY is missing in Streamlit Secrets.")
     st.stop()
 
 if not WEATHER_API_KEY:
-    st.error("❌ WEATHER_API_KEY is missing in your .env file.")
+    st.error("❌ WEATHER_API_KEY is missing in Streamlit Secrets.")
     st.stop()
 
 # --------------------------------------------------
